@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananta Montessori - Your Child's Future Begins</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ananta-teal': '#7db4b5',
+                        'ananta-green': '#8fbc8f',
+                        'ananta-orange': '#f4a261',
+                        'ananta-dark-green': '#2c5f41',
+                        'ananta-brown': '#8B4513'
+                    },
+                    fontFamily: {
+                        'alatsi': ['Alatsi', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --ananta-dark-green: #2d5016;
+            --ananta-green: #7cb342;
+            --ananta-teal: #4db6ac;
+            --ananta-orange: #ff7043;
+        }
+
+        .ananta-dark-green {
+            color: var(--ananta-dark-green);
+        }
+
+        .bg-ananta-green {
+            background-color: var(--ananta-green);
+        }
+
+        .bg-ananta-teal {
+            background-color: var(--ananta-teal);
+        }
+
+        .bg-ananta-orange {
+            background-color: var(--ananta-orange);
+        }
+
+        .text-ananta-dark-green {
+            color: var(--ananta-dark-green);
+        }
+
+        .offer-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 9px;
+            font-weight: bold;
+            line-height: 1.1;
+            color: white;
+        }
+
+        /* Responsive adjustments for offer badges */
+        @media (max-width: 1024px) {
+            .offer-badge {
+                width: 70px;
+                height: 70px;
+                font-size: 8px;
+                top: 10px;
+                right: -25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .offer-badge {
+                width: 60px;
+                height: 60px;
+                font-size: 7px;
+                top: 8px;
+                right: -20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .offer-badge {
+                width: 50px;
+                height: 50px;
+                font-size: 6px;
+                top: 5px;
+                right: -15px;
+            }
+        }
+
+        .programme-card {
+            position: relative;
+            overflow: visible;
+        }
+
+        .programme-image {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border: 2px dashed #ccc;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-alatsi">
+    <!-- Header -->
+    <header class="bg-white py-2 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="/images/ananta-01.png"
+                    class="w-32 sm:w-40 md:w-48 lg:w-60 h-12 sm:h-16 md:h-18 lg:h-20 object-contain"
+                    alt="Ananta Montessori">
+            </div>
+
+            <!-- Desktop Header Buttons -->
+            <div class="hidden md:flex space-x-2">
+                <button class="bg-ananta-teal text-white px-4 py-2 rounded-full text-xs font-semibold uppercase">
+                    📚 Admissions
+                </button>
+                <button class="bg-ananta-green text-white px-4 py-2 rounded-full text-xs font-semibold uppercase">
+                    📞 Contact Us
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-toggle" class="md:hidden bg-ananta-teal text-white p-2 rounded">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-2">
+                <button class="w-full bg-ananta-teal text-white px-4 py-2 rounded-full text-xs font-semibold uppercase">
+                    📚 Admissions
+                </button>
+                <button
+                    class="w-full bg-ananta-green text-white px-4 py-2 rounded-full text-xs font-semibold uppercase">
+                    📞 Contact Us
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section
+        class="relative bg-gradient-to-r from-gray-700 to-gray-900 text-white overflow-visible min-h-screen sm:min-h-[600px]"
+        style="background-image: url('/images/1920x800.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div
+            class="relative max-w-7xl mx-auto px-4 py-8 sm:py-12 lg:py-16 grid lg:grid-cols-2 gap-8 sm:items-center min-h-screen sm:min-h-[600px]">
+
+            <!-- Appointment Form Desktop Form -->
+            <div class="hidden sm:flex justify-center lg:justify-start order-2">
+                <div class="bg-white text-gray-800 px-4 sm:px-6 py-4 rounded-lg shadow-lg w-full max-w-[400px]">
+                    <h3 class="text-ananta-orange font-bold mb-4 text-center text-lg sm:text-xl lg:text-2xl">Book an
+                        Appointment to
+                        Tour<br>The Ananta Campus!</h3>
+                    <form class="space-y-3 sm:space-y-4">
+                        <input type="text" placeholder="Name"
+                            class="w-full p-2 sm:p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ananta-teal text-sm sm:text-base">
+                        <input type="text" placeholder="Contact"
+                            class="w-full p-2 sm:p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ananta-teal text-sm sm:text-base">
+                        <input type="email" placeholder="Email"
+                            class="w-full p-2 sm:p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ananta-teal text-sm sm:text-base">
+                        <select
+                            class="w-full p-2 sm:p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ananta-teal text-sm sm:text-base">
+                            <option>Programme</option>
+                            <option>Little Sports Programme</option>
+                            <option>Curious Minds Programme</option>
+                            <option>Early Discoverers Programme</option>
+                        </select>
+                        <div class="flex items-center space-x-2">
+                            <input type="checkbox" id="whatsapp" class="text-ananta-teal">
+                            <label for="whatsapp" class="text-xs sm:text-sm">Get Updates on WhatsApp</label>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-ananta-orange text-white py-2 sm:py-3 rounded font-semibold uppercase text-xs sm:text-sm">
+                            BOOK CAMPUS VISIT THROUGH WHATSAPP
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class=" text-center lg:text-left order-1 lg:order-2 mt-8">
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">YOUR CHILD'S FUTURE BEGINS</h1>
+                <p class="text-lg sm:text-xl mb-8">With Limitless Learning at Ananta Montessori</p>
+
+                <!-- Mobile Stats -->
+                <div
+                    class="visible sm:hidden w-full mt-16">
+                    <div
+                        class="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-16 justify-center items-center max-w-4xl mx-auto">
+                        <!-- 30 Years -->
+                         <div class="flex gap-8">
+                        <div class="flex flex-col items-center rounded-lg p-2 sm:p-4 min-w-[120px] sm:min-w-[140px]">
+                           <img src="/images/2.png" class="w-36 h-36" alt="">
+                        </div>
+
+                        <!-- Created by Parents -->
+                        <div class="flex flex-col items-center rounded-lg p-2 sm:p-4 min-w-[120px] sm:min-w-[140px]">
+                            <img src="/images/3.png" class="w-36 h-36" alt="">
+                        </div>
+                        </div>
+
+                        <!-- Certified Educators -->
+                        <div class="flex flex-col items-center rounded-lg p-2 sm:p-4 min-w-[140px] sm:min-w-[180px]">
+                            <img src="/images/4.png" class="w-36 h-36" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Stats hanging at bottom border -->
+        <div
+            class="hidden sm:flex absolute -bottom-[60px] sm:-bottom-[80px] left-1/2 transform -translate-x-1/2 lg:left-3/4 lg:-translate-x-1/2 w-full px-4">
+            <div
+                class="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-16 justify-center items-center max-w-4xl mx-auto">
+                <!-- 30 Years -->
+                <div class="flex flex-col items-center rounded-lg p-2 sm:p-4 min-w-[120px] sm:min-w-[140px]">
+                   
+                        <img src="/images/2.png" class="w-36 h-36" alt="">
+                    
+                    
+                </div>
+
+                <!-- Created by Parents -->
+                <div class="flex flex-col items-center rounded-lg p-2 sm:p-4 min-w-[120px] sm:min-w-[140px]">
+                     <img src="/images/3.png" class="w-36 h-36" alt="">
+                </div>
+
+                <!-- Certified Educators -->
+                <div class="flex flex-col items-center rounded-lg p-2 sm:p-4 min-w-[140px] sm:min-w-[180px]">
+                    <img src="/images/4.png" class="w-36 h-36" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Add space below to accommodate the hanging stats -->
+    <div class="h-12 sm:h-16 bg-gray-50"></div>
+
+    <!-- Mobile Form -->
+     <div class="p-4">
+    <div class="visible sm:hidden flex justify-center lg:justify-start ">
+        <div class="bg-white text-gray-800 px-4 sm:px-6 py-4 rounded-lg shadow-xl w-full max-w-[400px]">
+            <h3 class="text-ananta-orange font-bold mb-4 text-center text-lg sm:text-xl lg:text-2xl">Book an
+                Appointment to
+                Tour<br>The Ananta Campus!</h3>
+            <form class="space-y-3 sm:space-y-4">
+                <input type="text" placeholder="Name"
+                    class="w-full p-2 sm:p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ananta-teal text-sm sm:text-base">
+                <input type="text" placeholder="Contact"
+                    class="w-full p-2 sm:p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ananta-teal text-sm sm:text-base">
+                <input type="email" placeholder="Email"
+                    class="w-full p-2 sm:p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ananta-teal text-sm sm:text-base">
+                <select
+                    class="w-full p-2 sm:p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ananta-teal text-sm sm:text-base">
+                    <option>Programme</option>
+                    <option>Little Sports Programme</option>
+                    <option>Curious Minds Programme</option>
+                    <option>Early Discoverers Programme</option>
+                </select>
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" id="whatsapp" class="text-ananta-teal">
+                    <label for="whatsapp" class="text-xs sm:text-sm">Get Updates on WhatsApp</label>
+                </div>
+                <button type="submit"
+                    class="w-full bg-ananta-orange text-white py-2 sm:py-3 rounded font-semibold uppercase text-xs sm:text-sm">
+                    BOOK CAMPUS VISIT THROUGH WHATSAPP
+                </button>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- Campus Section -->
+    <section class="py-8 sm:py-12 lg:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Image Section -->
+                <div class="order-1 lg:order-1">
+                    <div class="relative">
+                        <!-- Campus Image -->
+                        <div class="w-full h-64 sm:h-80 lg:h-96 rounded-lg shadow-lg overflow-hidden">
+                            <img src="/images/600 x 500.jpg" alt="Ananta Montessori Campus"
+                                class="w-full h-full object-cover" />
+                        </div>
+                        <!-- Image Label -->
+                        <div class="mt-4 text-center lg:text-left">
+                            <p class="text-gray-600 font-semibold text-base sm:text-lg text-center">14000 Sqft campus at
+                                Khajaguda
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Section -->
+                <div class="order-2 lg:order-2">
+                    <div class="space-y-4 sm:space-y-6">
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">
+                            Our Beautiful Campus
+                        </h2>
+
+                        <p class="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
+                            At Ananta, we strongly believe that learning is a lifelong experience which begins at birth.
+                            That's why, we offer Montessori Education to young children from the tender age of 1.5 years
+                            so that they grow in every aspect of life.
+                        </p>
+
+                        <p class="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
+                            We focus on emotional, social, cognitive, physical and mental development of children, thus
+                            providing a nurturing environment for their holistic growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Programmes -->
+    <section class="py-8 sm:py-12 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-ananta-dark-green">OUR PROGRAMMES
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
+                <!-- Little Sports Programme -->
+                <div class="bg-white rounded-lg shadow-lg programme-card relative mx-4 sm:mx-0">
+                    <div class="mb-4">
+                        <h3 class="bg-gray-600 text-white px-3 py-1 text-xs sm:text-sm font-bold text-center mt-6">
+                            LITTLE
+                            SPORTS PROGRAMME</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-2 text-center px-2">FOR 1.5 - 2.5 YEARS | ⏰ 08:30
+                            AM - 12:30
+                            PM</p>
+                    </div>
+
+                    <div
+                        class="offer-badge bg-ananta-teal !text-[12px] sm:!text-[16px] !font-thin absolute !-right-6 sm:!-right-10 !top-24 sm:!top-32">
+                        DAYCARE<br>FACILITY<br>AVAILABLE
+                    </div>
+
+                    <div class="px-4 sm:px-6">
+                        <div class="h-24 sm:h-32 rounded mb-4 flex items-center justify-center">
+                            <img src="/images/Little Sprouts.2.jpg" alt="Little Sports Programme"
+                                class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <div class="mt-8 sm:mt-12 px-4 sm:px-6 pb-6">
+                        <p class="text-xs sm:text-sm text-gray-700 text-center">
+                            Emphasizes on developing communication and motor skills through active, storytelling and
+                            sensory experiences.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Curious Minds Programme -->
+                <div class="bg-white rounded-lg shadow-lg programme-card relative mx-4 sm:mx-0">
+                    <div class="mb-4">
+                        <h3 class="bg-ananta-green text-white px-3 py-1 text-xs sm:text-sm font-bold text-center mt-6">
+                            CURIOUS MINDS PROGRAMME
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-2 text-center px-2">
+                            FOR 2.5 - 4 YEARS | ⏰ 08:30 AM - 12:30 PM
+                        </p>
+                    </div>
+
+                    <div
+                        class="offer-badge bg-ananta-green !text-[12px] sm:!text-[16px] !font-thin absolute !-right-6 sm:!-right-10 !top-24 sm:!top-32">
+                        DAYCARE<br>FACILITY<br>AVAILABLE
+                    </div>
+
+                    <div class="px-4 sm:px-6">
+                        <div class="h-24 sm:h-32 rounded mb-4 flex items-center justify-center">
+                            <img src="/images/Curious Minds.2.jpg" alt="Curious Minds Programme"
+                                class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+
+                    <div class="mt-8 sm:mt-12 px-4 sm:px-6 pb-6">
+                        <p class="text-xs sm:text-sm text-gray-700 text-center">
+                            Fosters curiosity, independence, and self-confidence through self-directed learning in
+                            areas of mathematics, language and practical life skills.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Early Discoverers Programme -->
+                <div
+                    class="bg-white rounded-lg shadow-lg programme-card relative mx-4 sm:mx-0 md:col-span-2 xl:col-span-1 md:max-w-md md:mx-auto xl:max-w-none">
+                    <div class="mb-4">
+                        <h3 class="bg-ananta-orange text-white px-3 py-1 text-xs sm:text-sm font-bold text-center mt-6">
+                            EARLY DISCOVERERS PROGRAMME
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-2 text-center px-2">
+                            FOR 4 - 6 YEARS | ⏰ 08:30 AM - 12:30 PM
+                        </p>
+                    </div>
+
+                    <div
+                        class="offer-badge bg-ananta-orange !text-[12px] sm:!text-[16px] !font-thin absolute !-right-6 sm:!-right-10 !top-24 sm:!top-32">
+                        DAYCARE<br>FACILITY<br>AVAILABLE
+                    </div>
+
+                    <div class="px-4 sm:px-6">
+                        <div class="h-24 sm:h-32 rounded mb-4 flex items-center justify-center">
+                            <img src="/images/Early Discoverers.2.jpg" alt="Early Discoverers Programme"
+                                class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+
+                    <div class="mt-8 sm:mt-12 px-4 sm:px-6 pb-6">
+                        <p class="text-xs sm:text-sm text-gray-700 text-center">
+                            Promotes critical thinking, problem-solving and collaboration through foundation skills
+                            in reading, writing, mathematics and science.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daycare Info -->
+    <section class="pb-6 text-black">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-2 mb-2">
+                <span class="text-xl sm:text-2xl">👥</span>
+                <h3 class="text-sm sm:text-base lg:text-lg font-bold text-center">WALDORF-INSPIRED DAYCARE FACILITY
+                    AVAILABLE FOR AGES 1-6 YEARS FROM 11:30
+                    AM TO 5:00 PM.</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 sm:py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-2">LEARNING BEGINS ON 29<sup>TH</sup> JUNE</h3>
+                    <p class="text-ananta-orange font-semibold mb-4 text-sm sm:text-base">Special Scholarships Available
+                        for First 20
+                        Admissions</p>
+                    <div
+                        class="flex flex-col sm:flex-row justify-center md:justify-start space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
+                        <button class="bg-ananta-teal text-white px-4 sm:px-6 py-2 rounded font-semibold text-sm">
+                            📝 APPLY NOW
+                        </button>
+                        <button class="bg-ananta-green text-white px-4 sm:px-6 py-2 rounded font-semibold text-sm">
+                            🏫 VISIT CAMPUS
+                        </button>
+                    </div>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <span class="w-8 h-8 bg-ananta-orange rounded-full flex items-center justify-center">📘</span>
+                        <span class="w-8 h-8 bg-ananta-orange rounded-full flex items-center justify-center">▶️</span>
+                        <span class="w-8 h-8 bg-ananta-orange rounded-full flex items-center justify-center">💼</span>
+                        <span class="w-8 h-8 bg-ananta-orange rounded-full flex items-center justify-center">📍</span>
+                    </div>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <div class="flex items-center justify-center md:justify-end space-x-3">
+                        <img src="/images/ananta-02.png"
+                            class="w-32 sm:w-40 md:w-48 lg:w-60 h-12 sm:h-16 md:h-18 lg:h-20 object-contain"
+                            alt="Ananta Montessori">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add responsive behavior and interactions
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('active');
+
+                    // Toggle hamburger to X icon
+                    const svg = this.querySelector('svg');
+                    if (mobileMenu.classList.contains('active')) {
+                        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+                    } else {
+                        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                    }
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (mobileMenu && mobileMenuToggle &&
+                    !mobileMenu.contains(e.target) &&
+                    !mobileMenuToggle.contains(e.target) &&
+                    mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    const svg = mobileMenuToggle.querySelector('svg');
+                    svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                }
+            });
+
+            // Form validation
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    alert('Thank you for your interest! We will contact you soon.');
+                });
+            }
+
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Handle window resize for responsive adjustments
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 768 && mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    const svg = mobileMenuToggle.querySelector('svg');
+                    svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
